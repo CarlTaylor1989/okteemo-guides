@@ -10,6 +10,7 @@ $(document).ready(function(){
 		
 		if(name.length) {
 			$possible = $possible.filter('[data-name*="' + $.trim(name.toLowerCase()) + '"]');
+			$possible.fadeIn(200);
 		}
 
 		$possible.show();
@@ -32,7 +33,7 @@ $(document).ready(function(){
 		<div class="span12">
 			<div id="champion_list">
 				<?php foreach ($champion_name as $champ_name) { ?>
-					<a href="?champion=<?php echo strtolower($champ_name->name); ?>" style="width: 80px; height: 80px; background-color: #FFFFFF; display: block; float: left; margin-right: 20px; margin-bottom: 20px;" data-name="<?php echo strtolower($champ_name->name); ?>"><?php echo $champ_name->name; ?></a>
+					<a href="?champion=<?php echo strtolower($champ_name->name); ?>" style="width: 104px; height: 104px; background: url(http://lkimg.zamimg.com/shared/riot/images/champions/<?php echo $champ_name->id; ?>_104.png) top left no-repeat; display: block; float: left; margin-bottom: 20px; margin-right: 20px;" data-name="<?php echo strtolower($champ_name->name); ?>" class="img-rounded"><?php echo $champ_name->name; ?></a>
 				<?php } ?>
 			</div>
 		</div>

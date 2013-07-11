@@ -4,7 +4,7 @@ class Welcome extends MY_Controller {
 
 	public function index()
 	{
-		$champion = Champion::find('all', array('select' => 'id, name', 'order' => 'name ASC'));
+		$champion = Champion::find('all', array('select' => 'id, name, title', 'order' => 'name ASC'));
 
 		$this->data = array(
 			'champion_name' 	=> $champion

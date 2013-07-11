@@ -1,8 +1,6 @@
 <script type="text/javascript">
 var subjects = [<?php foreach ($champion_name as $champ_name) { echo '"'.stripslashes($champ_name->name).'",'; }?>];
 $(document).ready(function(){
-	$('#search').typeahead({source: subjects});
-
 	var guidesChampionListFilter = function() {
 		var name = $('#search').val();
 		var $possible = $('#champion_list > a');
@@ -25,7 +23,7 @@ $(document).ready(function(){
 	<div class="row">
 		<div class="span12">
 			<form>
-				<input type="text" class="span12" placeholder="Choose a..." id="search" data-provide="typeahead" data-items="4" autocomplete="off" />
+				<input type="text" class="span12" placeholder="Choose a champion..." id="search" autocomplete="off" />
 			</form>
 		</div>
 	</div>
@@ -33,7 +31,9 @@ $(document).ready(function(){
 		<div class="span12">
 			<div id="champion_list">
 				<?php foreach ($champion_name as $champ_name) { ?>
-					<a href="?champion=<?php echo strtolower($champ_name->name); ?>" style="width: 104px; height: 104px; background: url(http://lkimg.zamimg.com/shared/riot/images/champions/<?php echo $champ_name->id; ?>_104.png) top left no-repeat; display: block; float: left; margin-bottom: 20px; margin-right: 20px;" data-name="<?php echo strtolower($champ_name->name); ?>" class="img-rounded"><?php echo $champ_name->name; ?></a>
+					<a href="?champion=<?php echo strtolower($champ_name->name); ?>" data-toggle="tooltip" title="<?php echo $champ_name->title; ?>" style="background: url(http://lkimg.zamimg.com/shared/riot/images/champions/<?php echo $champ_name->id; ?>_104.png) top left no-repeat;" data-name="<?php echo strtolower($champ_name->name); ?>" alt="<?php echo $champ_name->title; ?>" class="champion_icon img-rounded">
+
+						<div style="background-color: #000000; position: absolute; bottom: 0; width: 100%; text-align: center; line-height: 26px;"><?php echo $champ_name->name; ?></div></a>
 				<?php } ?>
 			</div>
 		</div>

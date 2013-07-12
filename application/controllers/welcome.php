@@ -10,6 +10,7 @@ class Welcome extends MY_Controller {
 			'champion_name' 	=> $champion
 		);
 	}
+
 }
 
 /* End of file welcome.php */

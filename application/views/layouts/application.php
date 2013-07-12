@@ -17,11 +17,13 @@
 <link rel="shortcut icon" href="/favicon.ico">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-<link rel="stylesheet" href="assets/css/bootstrap.min.css">
-<link rel="stylesheet" href="assets/css/style.css">
-<script src="assets/js/libs/jquery-1.9.1.min.js"></script>
-<script src="assets/js/libs/bootstrap.min.js"></script>
-<script src="assets/js/libs/modernizr-2.5.3.js"></script>
+<link rel="stylesheet" href="http://code.jquery.com/ui/1.10.3/themes/smoothness/jquery-ui.css" />
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/bootstrap.min.css">
+<link rel="stylesheet" href="<?php echo base_url(); ?>assets/css/style.css">
+<script src="<?php echo base_url(); ?>assets/js/libs/jquery-1.9.1.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/libs/bootstrap.min.js"></script>
+<script src="<?php echo base_url(); ?>assets/js/libs/modernizr-2.5.3.js"></script>
+<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
 
 </head>
 

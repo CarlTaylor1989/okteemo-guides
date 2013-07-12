@@ -41,6 +41,26 @@
 $route['default_controller'] = "welcome";
 $route['404_override'] = '';
 
+/*
+ * Get the contacts urls that are set in database
+ * and set the constant
+ */
+require_once(BASEPATH .'database/DB'. EXT);
+$champions_array = array();
+$db =& DB();
+$query = $db->get('champions');
+$result = $query->result();
+foreach($result as $row)
+{
+    if(!in_array($row->name, $champions_array)) {
+        array_push($champions_array, strtolower($row->name));
+    }
+}
+
+define('CHAMPIONS', '('.implode('|', $champions_array).')');
+
+$route['guide/'.CHAMPIONS] = "champ_guide/index/$1";
+
 
 /* End of file routes.php */
 /* Location: ./application/config/routes.php */
